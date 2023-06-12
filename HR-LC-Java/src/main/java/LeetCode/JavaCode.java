@@ -37,26 +37,28 @@ public class JavaCode {
             if(!operators.contains(string)) {
                 stackRPN.push(string);
             } else {
+//                pop from the stack returns the element that is available at the top of the stack and removes it from the stack to be placed in a variable
                 int x = Integer.parseInt(stackRPN.pop());
                 int y = Integer.parseInt(stackRPN.pop());
                 int index = operators.indexOf(string);
 
                 switch (index) {
-                    case 0:
-                        stackRPN.push(String.valueOf(x + y));
-                        break;
-                    case 1:
-                        stackRPN.push(String.valueOf(y - x));
-                        break;
-                    case 2:
-                        stackRPN.push(String.valueOf(y * x));
-                        break;
-                    case 3:
-                        stackRPN.push(String.valueOf(y / x));
-                        break;
+                    case 0 -> stackRPN.push(String.valueOf(x + y));
+                    case 1 -> stackRPN.push(String.valueOf(y - x));
+                    case 2 -> stackRPN.push(String.valueOf(y * x));
+                    case 3 -> stackRPN.push(String.valueOf(y / x));
                 }
             }
         }
         System.out.println(Integer.valueOf(stackRPN.pop()));
     }
+
+
+
+//    Given two strings s and t, determine if they are isomorphic. Two strings are isomorphic if the characters in x can be replaced to get y.
+//    For example,"egg" and "add" are isomorphic, "foo" and "bar" are not.
+    public void isomorphicStrings(String x, String y) {
+
+    }
+
 }
